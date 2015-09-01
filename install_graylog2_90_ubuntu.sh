@@ -355,6 +355,13 @@ service rsyslog restart
 echo "Starting graylog2-web-interface"
 service graylog2-web-interface start
 
+echo "installing nxlog"
+wget http://www.bowlman.org/down/nxlog-ce_2.8.1248_ubuntu_1404_amd64.deb
+aptitude -y install libapr1 libc6 libcap2 libdbi1 libexpat1 libpcre3 libperl5.18 libssl1.0.0 zlib1g adduser openssl lsb-base 
+dpkg -i nxlog-ce_2.8.1248_ubuntu_1404_amd64.deb
+
+
+
 # All Done
 echo "Installation has completed!!"
 echo "Browse to IP address of this Graylog2 Server Used for Installation"
